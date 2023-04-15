@@ -1,4 +1,4 @@
-﻿using Mango.Web.Models.Dto;
+﻿using Mango.Web.Models;
 using Mango.Web.Services.IServices;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -23,6 +23,11 @@ namespace Mango.Web.Controllers
                 list = JsonConvert.DeserializeObject<List<ProductDto>>(Convert.ToString(response.Result));
             }
             return View(list);
+        }
+
+        public async Task<IActionResult> ProductCreate()
+        {
+            return View();
         }
     }
 }
